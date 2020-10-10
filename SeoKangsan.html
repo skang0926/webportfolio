@@ -1,0 +1,554 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script type="text/JavaScript" src="http://code.jquery.com/jquery-1.7.min.js"></script>
+        <script type="text/javascript">
+
+           $(document).ready(function() {
+               
+
+                $(".tabbutton").change(function() {
+                    var tabValue = $('input[name="tabs"]:checked').val();
+                    if(tabValue=="tab1"){
+                        all_clear();
+                        $('#firstpage').css("display", "block");
+                        $('.tab1,.tab2,.tab3').css("display","block");
+                    }
+                    else if(tabValue=="tab2"){
+                        all_clear();
+                        $('#secondpage').css("display", "block");
+                        $('.tab1,.tab2,.tab3').css("display","block");
+                    }
+                    else if(tabValue=="tab3"){
+                        all_clear();
+                        $('#thirdpage').css("display", "block");
+                        $('.tab1,.tab2,.tab3').css("display","block");
+                    }
+                });              
+            });
+            function all_clear(){
+                $('#firstpage,#secondpage,#thirdpage').css("display", "none");
+                $('.tab1,.tab2,.tab3').css("display", "none");
+            }
+
+            function tap1_click() {
+                $("#tab2").off("click");
+                $("#tab3").off("click");
+                $("body").stop(false, true);
+                $("#tab1").off("click").on("click", function () {
+                    $("body").fadeOut(0).delay(100).fadeIn(600);
+                })
+            };
+            function tap2_click() {
+                $("#tab1").off("click");
+                $("#tab3").off("click");
+                $("body").stop(false, true);
+                $("#tab2").off("click").on("click", function () {
+                    $("body").fadeOut(0).delay(100).fadeIn(600);
+                })
+            };
+            function tap3_click() {
+                $("#tab2").off("click");
+                $("#tab1").off("click");
+                $("body").stop(false, true);
+                $("#tab3").off("click").on("click", function () {
+                    $("body").fadeOut(0).delay(100).fadeIn(600);
+                })
+            };
+
+            
+
+                
+        </script>
+    </head>
+    
+    <body>
+        <header class="headerset rowBetween">
+            <div class="info">
+                <div> </div><div> </div><div> </div><div> </div><div> </div>
+                <div id="hambuger">
+                    <label for="toggle" class="hambugercheck cursor">
+                        <img src="./img/menubutton.png" class="hambugercheck" width="15" height="15">
+                    </label>
+
+                </div>
+                <div> </div><div> </div>
+                <div id="baner" class="cursor">
+                    <a href="./pp.html"> 서 강 산</a>
+                    <div class="gray">/ programmer </div>
+                </div>
+
+            </div>
+                <div id="hambuger">
+                    <header class="menutab rowBetween">
+                        <input id="tab1" class="tabbutton" type="radio" name="tabs" value="tab1" checked="">
+                        <label for="tab1" class="tab tab1" onclick="tap1_click()">About me</label>
+
+                        <input id="tab2" class="tabbutton" type="radio" name="tabs" value="tab2">
+                        <label for="tab2" class="tab tab2" onclick="tap2_click()">Resume</label>
+
+                        <input id="tab3" class="tabbutton" type="radio" name="tabs" value="tab3">
+                        <label for="tab3" class="tab tab3" onclick="tap3_click()">Projects</label>
+                    </header>
+                    <section>
+                        <div></div>
+                    </section>
+                </div>
+</header>
+        <article>
+            <section id="mainpage">
+                <!--1페이지-->
+                <article id="firstpage" class="row pageset">
+                    <article class="pagebody rowBetween">
+                        <div id="brownBackground">
+                            <div id="profile" class="rowBetween">
+                                <div id="profileLeft">
+                                    <div id="profileImagePadding">
+                                        <span id="profileImageBox">
+                                            <div></div>
+                                            <div">
+                                                <img src="./img/profile.png" id="profileImage" width="200" height="200">
+                                            </div">
+                                            <div></div>
+                                        </span>
+                                    </div>
+                                    <div id="profileNameBox"> 서강산 </div>
+                                    <div id="profileGray">
+                                        <div></div>
+                                        <div id="profileGrayBox">Programmer</div>
+                                        <div></div>
+                                    </div>
+                                    <span id="profileLink">
+                                        <div></div>
+                                        <div>
+                                            <a href="https://github.com/skang0926" target="_blank">
+                                                <img src="./img/github.png" id="profileImage" width="25" height="25">
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="https://www.youtube.com/channel/UCvRpDPxITt93dMWfDeRZGMw" target="_blank">
+                                                <img src="./img/youtube.jpg" id="profileImage" width="25" height="25">
+                                            </a>
+                                        </div>
+                                        <div></div>
+                                    </span>
+                                </div>
+                                <div id="profileRight">
+                                    <div>
+                                        <div id="profileImagePadding"></div>
+                                        <div id="profileTitle">안녕하세요!</div>
+                                    </div>
+                                    <div id="profileText">
+                                        <p>이름 : 서강산 </p>
+                                        <p>생년월일 : 1997.02.20 </p>
+                                        <p>E-mail : skang0926@naver.com </p>
+                                        <p>휴대전화 : 010 - 8021 - 0818 </p>
+                                    </div>
+                                    <div id="profileButton">
+                                        <div></div>
+                                        <input id="tab2" class="tabbutton" type="radio" name="tabs" value="tab2">
+                                        <label for="tab2" class="tab tab2" onclick="tap2_click()">Resume</label>
+
+                                        <input id="tab3" class="tabbutton" type="radio" name="tabs" value="tab3">
+                                        <label for="tab3" class="tab tab3" onclick="tap3_click()">Projects</label>
+                                        <div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="whiteBackground">
+
+                        </div>
+                    </article>
+                </article>          <!--1페이지 끝-->
+                <article id="secondpage" class="row pageset">
+                    <!--2페이지-->
+                    <article class="pagebody rowBetween">
+                        <div id="mainBackground">
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                            <div id="setTextBox">
+                                <div></div>
+
+                                <div id="profileTitle">
+                                    <img src="./img/menubutton.png" class="hambugercheck" width="15" height="15">
+                                    Resume
+                                </div>
+                                <div></div>
+                            </div>
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                            <div id="setTextBox">
+                                <div></div>
+                                <div id="profileText"> Introduce </div>
+                                <div></div>
+                            </div>
+                            <div id="setTextBox">
+                                <div></div>
+                                <div id="textBox">
+                                    <div></div>
+                                    <div id="textBoxInit">
+                                        <div>
+                                            <p>
+                                                <div class="size20 bold"> 안녕하세요! </div> <br />
+                                                <div class="size15 bold">
+                                                    클라이언트 프로그래머 서강산이라고 합니다. <br />
+                                                    항상 일할 준비 되어 있습니다. <br />
+                                                    언제든지 연락 주세요.
+                                                </div>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div></div>
+                                </div>
+                                <div></div>
+                            </div>
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                            <div id="setTextBox">
+                                <div></div>
+                                <div id="profileText"> Education </div>
+                                <div></div>
+                            </div>
+                            <div id="setTextBox">
+                                <div></div>
+                                <div id="textBox">
+                                    <div></div>
+                                    <div id="textBoxInit">
+                                        <div id="textBoxLeft">
+                                            <img src="./img/hongik.png" class="hambugercheck" width="256" height="125">
+                                        </div>
+                                        <div id="textBoxRight">
+                                            <div id="profileText">
+                                                <br />
+                                                <p class="bold size20"> 2015.3~2021.2 </p>
+                                                <p class="size15">
+                                                    홍익대학교 세종캠퍼스 <br />
+                                                    게임소프트웨어 전공
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div></div>
+                                </div>
+                                <div></div>
+                            </div>
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                            <div id="setTextBox">
+                                <div></div>
+                                <div id="profileText"> Skills </div>
+                                <div></div>
+                            </div>
+                            <div id="setTextBox">
+                                <div></div>
+                                <div id="textBox">
+                                    <div></div>
+                                    <div id="textBoxInit">
+                                        <div id="textBoxLeft" class="bold size15">
+                                            <br />
+                                            <p>
+                                                &nbsp&nbsp<img src="./img/menubutton.png" class="hambugercheck" width="10" height="10">
+                                                C++ & STL
+                                            </p>
+                                            <p>
+                                                &nbsp&nbsp<img src="./img/menubutton.png" class="hambugercheck" width="10" height="10">
+                                                Unreal Engine4
+                                            </p>
+                                            <p>
+                                                &nbsp&nbsp<img src="./img/menubutton.png" class="hambugercheck" width="10" height="10">
+                                                DirectX11
+                                            </p>
+                                            <p>
+                                                &nbsp&nbsp<img src="./img/menubutton.png" class="hambugercheck" width="10" height="10">
+                                                멀티쓰레드에 대한 이해
+                                            </p>
+                                        </div>
+                                        <div id="textBoxRight" class="bold size15">
+                                            <br />
+                                            <p class="bold">
+                                                &nbsp&nbsp<img src="./img/menubutton.png" class="hambugercheck" width="10" height="10">
+                                                TCPServer 패킷 설계 및 Client 동기화 경험
+                                            </p>
+                                            <p class="bold">
+                                                &nbsp&nbsp<img src="./img/menubutton.png" class="hambugercheck" width="10" height="10">
+                                                VGG기반 이미지 분류기 개발 경험 (pytorch)
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div></div>
+                                </div>
+                                <div></div>
+                            </div>
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                        </div>
+                    </article>
+                </article>          <!--2페이지 끝-->
+                <article id="thirdpage" class="row pageset">
+                    <!--3페이지-->
+                    <article class="pagebody">
+                        <div id="mainBackground">
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                            <div id="setTextBox">
+                                <div></div>
+
+                                <div id="profileTitle">
+                                    <img src="./img/menubutton.png" class="hambugercheck" width="15" height="15">
+                                    Projects
+                                </div>
+                                <div></div>
+                            </div>
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                            <div id="setTextBox">
+                                <div></div>
+                                <div id="projectBox">
+                                    <div></div>
+                                    <div id="textBoxInit">
+                                        <div id="projectBoxDivide">
+                                            <img src="./img/TheLord.png" class="hambugercheck" width="500" height="410">
+                                        </div>
+                                        <div id="projectBoxDivide">
+                                            <div id="profileText">
+                                                <br />
+                                                <div class="borderBottomBlue">
+                                                    The Lord
+                                                    <a href="https://github.com/skang0926/The-Lord/" target="_blank">
+                                                        <img src="./img/github.png" id="profileImage" width="25" height="25">
+                                                    </a>
+                                                    <a href="https://youtu.be/kx-EK2vWkw8" target="_blank">
+                                                        <img src="./img/youtube.jpg" id="profileImage" width="25" height="25">
+                                                    </a>
+                                                </div>
+                                                <p class="size15">
+                                                    Unreal Engine4 C++ <br />
+                                                    UE4 Behavior Tree AI <br />
+                                                    Object Pooling (Sound & Particle) <br />
+                                                    FSM 기반 캐릭터 상태 관리 <br />
+                                                    Save / Load (Json) <br />
+                                                    캐릭터 간 대화 Json으로 관리 <br />
+                                                    Property 시스템 활용, Level 흐름 & Event 제어 <br />
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div></div>
+                                </div>
+                                <div></div>
+                            </div>
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                            <div id="setTextBox">
+                                <div></div>
+                                <div id="projectBox">
+                                    <div></div>
+                                    <div id="textBoxInit">
+                                        <div id="projectBoxDivide">
+                                            <img src="./img/BP.png" class="hambugercheck" width="500" height="410">
+                                        </div>
+                                        <div id="projectBoxDivide">
+                                            <div id="profileText">
+                                                <br />
+                                                <div class="borderBottomBlue">
+                                                    BattleRoyal
+                                                    <a href="https://youtu.be/lB5zfriEnE0" target="_blank">
+                                                        <img src="./img/youtube.jpg" id="profileImage" width="25" height="25">
+                                                    </a>
+                                                </div>
+                                                <p class="size15">
+                                                    Unreal Engine4 Blueprint <br />
+                                                    Unreal 데디케이트 서버 <br />
+                                                    Client 동기화 <br />
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div></div>
+                                </div>
+                                <div></div>
+                            </div>
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                            <div id="setTextBox">
+                                <div></div>
+                                <div id="projectBox">
+                                    <div></div>
+                                    <div id="textBoxInit">
+                                        <div id="projectBoxDivide">
+                                            <img src="./img/flight.png" class="hambugercheck" width="500" height="410">
+                                        </div>
+                                        <div id="projectBoxDivide">
+                                            <div id="profileText">
+                                                <br />
+                                                <div class="borderBottomBlue">
+                                                    Fly simulate
+                                                    <a href="https://youtu.be/ui2GOVURSZY" target="_blank">
+                                                        <img src="./img/youtube.jpg" id="profileImage" width="25" height="25">
+                                                    </a>
+                                                </div>
+                                                <p class="size15">
+                                                    DirectX11 <br />
+                                                    AABB Collision 구현 <br />
+                                                    3D Tralanslation (Flight, Drive, Walk) <br />
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div></div>
+                                </div>
+                                <div></div>
+                            </div>
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                            <div id="setTextBox">
+                                <div></div>
+                                <div id="projectBox">
+                                    <div></div>
+                                    <div id="textBoxInit">
+                                        <div id="projectBoxDivide">
+                                            <img src="./img/Sniper.png" class="hambugercheck" width="500" height="410">
+                                        </div>
+                                        <div id="projectBoxDivide">
+                                            <div id="profileText">
+                                                <br />
+                                                <div class="borderBottomBlue">
+                                                    Sniper
+                                                    <a href="https://youtu.be/Br4v52a1UrA" target="_blank">
+                                                        <img src="./img/youtube.jpg" id="profileImage" width="25" height="25">
+                                                    </a>
+                                                </div>
+                                                <p class="size15">
+                                                    DirectX11 <br />
+                                                    AABB Collision <br />
+                                                    Object Pooling (Monsters) <br />
+                                                    Cube mapping <br />
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div></div>
+                                </div>
+                                <div></div>
+                            </div>
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                            <div id="setTextBox">
+                                <div></div>
+                                <div id="projectBox">
+                                    <div></div>
+                                    <div id="textBoxInit">
+                                        <div id="projectBoxDivide">
+                                            <img src="./img/BettingGame.png" class="hambugercheck" width="500" height="410">
+                                        </div>
+                                        <div id="projectBoxDivide">
+                                            <div id="profileText">
+                                                <br />
+                                                <div class="borderBottomBlue">
+                                                    BettingGame
+                                                    <a href="https://github.com/skang0926/TCPServerBettingGame" target="_blank">
+                                                        <img src="./img/github.png" id="profileImage" width="25" height="25">
+                                                    </a>
+                                                    <a href="https://youtu.be/Nt7mW8M7Vm8" target="_blank">
+                                                        <img src="./img/youtube.jpg" id="profileImage" width="25" height="25">
+                                                    </a>
+                                                </div>
+                                                <p class="size15">
+                                                    TCP Listen Server / C++ (Team Project) <br />
+                                                    패킷 설계 <br />
+                                                    패킷 송/수신 구현 <br />
+                                                    Client 동기화 구현 <br />
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div></div>
+                                </div>
+                                <div></div>
+                            </div>
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                            <div id="setTextBox">
+                                <div></div>
+                                <div id="projectBox">
+                                    <div></div>
+                                    <div id="textBoxInit">
+                                        <div id="projectBoxDivide">
+                                            <img src="./img/vgg.png" class="hambugercheck" width="500" height="410">
+                                        </div>
+                                        <div id="projectBoxDivide">
+                                            <div id="profileText">
+                                                <br />
+                                                <div class="borderBottomBlue">
+                                                    VGG기반 Animals 분류기
+                                                    <a href="https://github.com/skang0926/Multi-lable-Classification-Network" target="_blank">
+                                                        <img src="./img/github.png" id="profileImage" width="25" height="25">
+                                                    </a>
+                                                </div>
+                                                <p class="size15">
+                                                    Pytorch <br />
+                                                    Multil-lable Classification Network 설계 <br />
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div></div>
+                                </div>
+                                <div></div>
+                            </div>
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                            <div id="setTextBox">
+                                <div></div>
+                                <div id="projectBox">
+                                    <div></div>
+                                    <div id="textBoxInit">
+                                        <div id="projectBoxDivide">
+                                            <img src="./img/ThankYou.jpg" class="hambugercheck" width="500" height="410">
+                                        </div>
+                                        <div id="projectBoxDivide">
+                                            <div id="profileText">
+                                                감사합니다. <br />
+                                                혹시 관심 있으시면 언제든지 연락 주세요. <br /> <br />
+                                                010 - 8021 - 0818 <br />
+                                                skang0926@naver.com 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div></div>
+                                </div>
+                                <div></div>
+                            </div>
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                            <div id="profileImagePadding"></div>
+                        </div>
+                    </article>
+                </article>
+            </section>   
+         </article>            <!--3페이지 끝-->      
+
+    </body>
+
+</html>
+
