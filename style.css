@@ -344,6 +344,7 @@
          flex-direction: row;
          justify-content: space-between;
      }
+
      
      #profileButton .tab {
          color: white;
@@ -356,12 +357,40 @@
          text-align: center;
          font-size: 15px;
      }
+
+     #projectButton  {
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+     }
+
+     #projectButton .tab {
+         color: white;
+         width: 120px;
+         line-height: 30px;
+         height: 30px;
+         background-color: #2c33c4;
+         border: 5px solid #2c33c4;
+         border-radius: 30px;
+         text-align: center;
+         font-size: 15px;
+     }
+     
+     #projectButton :hover {
+         color: #2c33c4;
+         font-weight: bold;
+         font-size: 19px;
+         background-color: #E6DACE;
+         border: 5px solid #E6DACE;
+     }
+     
      #profileButton :hover {
          color: #2c33c4;
          font-weight: bold;
          font-size: 19px;
          background-color: white;
          border: 5px solid #ffffff;
+
      }
 
      #firstpage {
